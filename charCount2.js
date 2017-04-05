@@ -1,13 +1,13 @@
 function charCount (string){
-  var str = string.replace(/\s/g, '');
+  var str = string.replace(/\s/g, '').toLowerCase();
   console.log(str);
   var strObject = {}
-  for(char of str){
-    if(!strObject.hasOwnProperty(char))
-      strObject[char] = [];
-    strObject[char].pop(string.indexOf());
+  for(var i = 0; i < str.length; i++){
+    if(!strObject.hasOwnProperty(str[i]))
+      strObject[str[i]] = [];
+    strObject[str[i]].push(i)
   }
   return strObject;
 }
 
-console.log(charCount("lighthouse in the house");
+console.log(charCount("lighthouseinthehouse"));
